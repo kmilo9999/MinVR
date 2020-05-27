@@ -359,6 +359,10 @@ find_package_handle_standard_args(
     G3D_INCLUDE_DIRS
     G3D_LIBRARIES
 	GLG3D_INCLUDE_DIR
+	JPEG_LIBRARIES
+	ZIP_LIBRARIES
+	PNG_LIBRARIES
+	ZLIB_LIBRARIES
 )
 
 mark_as_advanced(

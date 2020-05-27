@@ -49,9 +49,18 @@ else()
     message(SEND_ERROR "YOU MIGHT HAVE TO LINK MinVR_G3Dd.lib IN YOUR PROJECT MANUALLY")
 endif()
 
-# Setup dependency on G3D:
-include(AutoBuildG3D)
-AutoBuild_use_package_G3D(${PROJECT_NAME} PUBLIC)
+
+option(AUTODOWNLOAD_G3D "If enabled, downloads G3D from our repository")
+ if (${AUTODOWNLOAD_G3D})
+    message(STATUS "ON: Will build and install G3D.")
+    # Setup dependency on G3D:
+    include(AutoBuildG3D)
+    AutoBuild_use_package_G3D(${PROJECT_NAME} PUBLIC)
+ else()
+    message(STATUS "OFF: NOT building G3D.  Choose it with '-D ${AUTODOWNLOAD_G3D}=ON'.")
+ endif()
+
+
 
 
 
