@@ -80,14 +80,14 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 target_link_libraries(${PROJECT_NAME} PUBLIC MinVR)
 
 
-option(AUTODOWNLOAD_G3D "If enabled, downloads G3D from our repository")
+option(AUTODOWNLOAD_G3D "If enabled, downloads G3D from our repository and links it to the MinVR G3D Plugin")
  if (${AUTODOWNLOAD_G3D})
     message(STATUS "ON: Will build and install G3D.")
     # Setup dependency on G3D:
     include(AutoBuildG3D)
     AutoBuild_use_package_G3D(${PROJECT_NAME} PUBLIC)
  else()
-    find_package(G3D MODULE REQUIRED)
+    #find_package(G3D MODULE REQUIRED)
  endif()
 
 
