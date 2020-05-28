@@ -87,7 +87,7 @@ option(AUTODOWNLOAD_G3D "If enabled, downloads G3D from our repository")
     include(AutoBuildG3D)
     AutoBuild_use_package_G3D(${PROJECT_NAME} PUBLIC)
  else()
-    find_package(G3D)
+    find_package(G3D MODULE REQUIRED)
  endif()
 
 
